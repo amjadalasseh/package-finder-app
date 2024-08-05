@@ -1,0 +1,91 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.footer {
+  background-color: $dark-primary-color;
+  color: $white-color;
+  padding: $large-spacing 0;
+  font-family: $font-family;
+
+  .footer-content {
+    @include flex-center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: $max-width;
+    margin: $center-margin;
+    padding: 0 $small-spacing;
+
+    .footer-left {
+      flex: 1;
+      min-width: $min-width;
+      margin-right: $large-spacing;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: $small-spacing;
+      }
+
+      p {
+        font-size: 0.875rem;
+      }
+    }
+
+    .footer-right {
+      flex: 1;
+      min-width: $min-width;
+
+      .footer-nav {
+        display: flex;
+        gap: $small-spacing;
+        flex-wrap: wrap;
+        margin-bottom: $default-spacing;
+
+        a {
+          color: $white-color;
+          text-decoration: none;
+          font-size: $fs-small;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        gap: $small-spacing;
+
+        a {
+          color: $white-color;
+          font-size: $fs-medium;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: $fs-small;
+    padding: $small-spacing 0;
+    background-color: $black-color;
+  }
+
+  @include respond-to(small) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .footer-left,
+      .footer-right {
+        margin-right: 0;
+        margin-bottom: $large-spacing
+      }
+    }
+  }
+}

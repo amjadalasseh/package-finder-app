@@ -1,0 +1,42 @@
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  @include respond-to(small) {
+    padding: 0 10px;
+  }
+}
+
+.flex-column-container {
+  @include flex-column-center; // Use the flex column center mixin
+  width: 100%;
+  padding: 20px;
+
+
+  > * {
+    margin-bottom: 10px; // Space between child elements
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+  @include respond-to(medium) {
+    padding: 15px;
+  }
+
+  @include respond-to(small){
+    padding: 10px;
+    > * {
+      margin-bottom: 8px;
+    }
+  }
+}

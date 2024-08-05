@@ -1,0 +1,32 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == xlarge {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
